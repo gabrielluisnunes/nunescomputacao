@@ -8,7 +8,7 @@ const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.1, 
     },
   },
 };
@@ -35,8 +35,9 @@ const HeroSection: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <S.Headline as={motion.h2} variants={itemVariants}>
-            Soluções de Software <span>Sob Medida</span> que o seu ERP não alcança.
+          {}
+          <S.Headline as={motion.h1} variants={itemVariants}>
+            Soluções de Software <span>Sob Medida</span> para seu negócio.
           </S.Headline>
           
           <S.Subheadline as={motion.p} variants={itemVariants}>
@@ -49,17 +50,11 @@ const HeroSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Solicitar Consultoria Gratuita
+            Vamos criar juntos!
           </S.CtaButton>
+          
+          {}
         </S.TextContainer>
-
-        <S.IllustrationContainer
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          [Placeholder: Imagem/Ilustração de Tecnologia]
-        </S.IllustrationContainer>
       </S.HeroContent>
     </S.HeroWrapper>
   );

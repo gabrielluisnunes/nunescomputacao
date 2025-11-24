@@ -1,5 +1,11 @@
 import Header from "@/components/Header";
 import HeroSection from "@/sections/HeroSection";
+import ServicesSection from "@/sections/ServicesSection";
+import InlineTechSection from "@/sections/TechSection";
+import ProductsSection from "@/sections/Products/ProductsSection";
+import AboutUsSection from "@/sections/AboutUs";
+import ContactSection from "@/sections/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -7,10 +13,15 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        
-        {/* Aqui entrarão as próximas seções (ServicesSection, TechSection, etc.) */}
+        <ServicesSection />
+        <InlineTechSection />
+        <ProductsSection />
+        <AboutUsSection />
+        <ContactSection />
+        {}
       </main>
-      {/* O Footer pode ir aqui, dependendo se ele é parte do main ou não */}
+      {}
+        <Footer />
     </>
   );
 }

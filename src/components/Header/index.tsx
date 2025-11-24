@@ -1,38 +1,73 @@
 'use client';
 
-import React from 'react';
-import * as S from './styles';
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import * as S from './styles';
 
 const navItems = [
-  { label: 'Serviços', href: '#services' },
-  { label: 'Tecnologias', href: '#tech' },
-  { label: 'Sobre', href: '#about' },
+  { href: '#home', label: 'Início' },
+  { href: '#services', label: 'Serviços' },
+  { href: '#tech', label: 'Tecnologias' },
+  { href: '#contact', label: 'Contato' },
 ];
 
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <motion.div
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.2 }}
-    >
-      <S.HeaderContainer>
-        <S.Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span>Nunes</span> Computação
+    <S.HeaderWrapper isScrolled={isScrolled}>
+      <S.Container>
+        <S.Logo href="#home">
+          Nunes<span> Computação</span>
         </S.Logo>
         
-        <S.Nav>
-          <ul>
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
-              </li>
-            ))}
-          </ul>
-        </S.Nav>
-      </S.HeaderContainer>
-    </motion.div>
+        <S.Navbar isOpen={isOpen}>
+          {navItems.map((item) => (
+            <S.NavLink 
+              key={item.href} 
+              href={item.href} 
+              onClick={handleNavLinkClick}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {item.label}
+            </S.NavLink>
+          ))}
+          <S.CtaButton 
+            href="#contact"
+            whileHover={{ scale: 1.05, backgroundColor: '#ff8c00' }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleNavLinkClick}
+          >
+            Entre em Contato
+          </S.CtaButton>
+        </S.Navbar>
+        
+        <S.MenuIcon onClick={toggleMenu}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </S.MenuIcon>
+      </S.Container>
+    </S.HeaderWrapper>
   );
 };
 

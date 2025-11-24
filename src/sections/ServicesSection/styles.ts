@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const ServicesWrapper = styled.section`
   padding: ${({ theme }) => theme.spacings.xlarge} 0;
-  background-color: ${({ theme }) => theme.colors.neutral}; /* Fundo Cinza Claro para separar do Hero */
+  background-color: ${({ theme }) => theme.colors.neutral}; 
 `;
 
 export const Container = styled.div`
