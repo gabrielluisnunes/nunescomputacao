@@ -9,7 +9,20 @@ interface NavbarProps {
   isOpen: boolean;
 }
 
-export const HeaderWrapper = styled.header<HeaderProps>`
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const HeaderWrapper = styled.header.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isScrolled',
+})<HeaderProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -43,17 +56,6 @@ export const Logo = styled.a`
 
   span {
     color: ${({ theme }) => theme.colors.primary};
-  }
-`;
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 `;
 
