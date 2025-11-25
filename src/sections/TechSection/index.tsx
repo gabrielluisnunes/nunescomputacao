@@ -23,7 +23,7 @@ const techStack = [
   { name: 'Spring Boot', icon: <SiSpring />, category: 'Back-end', color: '#6DB33F' },
 
   
-  { name: 'Oracle DataBase', icon: <SiOracle />, category: 'Database', color: '#F80000' },
+  { name: 'Oracle Database', icon: <SiOracle />, category: 'Database', color: '#F80000' },
   { name: 'MySQL', icon: <SiMysql />, category: 'Database', color: '#4479A1' },
   
   

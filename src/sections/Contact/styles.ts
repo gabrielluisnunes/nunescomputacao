@@ -141,7 +141,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const SubmitButton = styled(motion.button)`
-  background-color: ${({ theme }) => theme.colors.cta};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: #fff;
   font-size: 1.8rem;
   font-weight: bold;
@@ -150,13 +150,12 @@ export const SubmitButton = styled(motion.button)`
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
-  margin-top: ${({ theme }) => theme.spacings.small};
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
 
   &:hover {
-    background-color: #ff8c00; 
+    background-color: #004d99; 
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.6);
   }
 `;
 
@@ -172,7 +171,6 @@ export const StatusMessage = styled.p<StatusMessageProps>`
   font-weight: 500;
   text-align: center;
   
-  /* Cores baseadas no status */
   background-color: ${({ status }) => 
     status === 'success' ? '#e6ffe6' : status === 'error' ? '#ffe6e6' : '#fff5e6'};
   color: ${({ status }) => 

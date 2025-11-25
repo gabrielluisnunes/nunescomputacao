@@ -3,7 +3,7 @@
 import React, { useState, FormEvent } from 'react';
 import * as S from './styles';
 import { motion, Variants } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 
 const containerVariants: Variants = {
@@ -37,7 +37,7 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     
     if (!formData.name || !formData.message) {
-      alert('Por favor, preencha seu Nome e a Mensagem.');
+      console.error('Por favor, preencha seu Nome e a Mensagem.');
       return;
     }
 
@@ -54,7 +54,8 @@ ${formData.message}
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    const whatsappLink = `https://api.whatsapp.com/send?phone=+45991339633${whatsappNumber}&text=${encodedMessage}`;
+    const finalWhatsappNumber = whatsappNumber || '5545991339633'; 
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${finalWhatsappNumber}&text=${encodedMessage}`;
 
     window.open(whatsappLink, '_blank');
     

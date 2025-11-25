@@ -3,25 +3,33 @@
 import React from 'react';
 import * as S from './ProductsStyles'; 
 import { motion, Variants } from 'framer-motion';
+import { FaExternalLinkAlt } from 'react-icons/fa'; 
 
 const productsData = [
   {
-    title: 'OssApp - Gestão de Academias de Jiu-Jitsu',
-    description: 'Solução 100% web desenvolvida para academias de Jiu-Jitsu. Inclui controle de alunos, graduações, geolocalização de presença e gestão financeira centralizada.',
+    title: 'Gestão de Academias de Jiu-Jitsu',
+    description: 'OssApp: Solução 100% web desenvolvida para academias de Jiu-Jitsu. Inclui controle de alunos, graduações, geolocalização de presença e gestão financeira centralizada.',
     tags: ['SaaS', 'Gestão', 'Web', 'Mobile'],
-    imagePlaceholder: 'Gestão Esportiva',
+    link: 'https://www.ossapp.com.br/', 
   },
   {
     title: 'PN Performance Mídia',
     description: 'O projeto consiste na criação da nova Landing Page institucional para a PN Performance, com o objetivo principal de otimizar a captação de leads qualificados através de uma experiência mobile e desktop de alta performance.',
     tags: ['Next.js', 'TyperScript', 'BootsTrap', 'Vercel'],
-    imagePlaceholder: 'Integração ERP',
+    link: 'https://pnperformancemidia.com/', 
   },
   {
-    title: 'Website Institucional Personalizado',
-    description: 'Criação de plataforma digital moderna e responsiva para empresa de serviços B2B, focada em geração de leads e reforço de autoridade no mercado.',
-    tags: ['Web', 'Next.js', 'Marketing', 'Lead Gen'],
-    imagePlaceholder: 'Website B2B',
+    title: 'MG Electric',
+    description: 'Criação de plataforma digital moderna e responsiva, focada em geração de leads, vendas online e reforço de autoridade no mercado.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    link: 'https://mgelectric.com.br/', 
+  },
+
+  {
+    title: 'Arena Kirmayr',
+    description: 'Site desenvolvido para a Arena Kirmayr.',
+    tags: ['WordPress'],
+    link: 'https://arenakirmayr.com/', 
   },
 ];
 
@@ -62,17 +70,20 @@ const ProductsSection: React.FC = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
             >
-              <S.CardImage>
-                [Placeholder: {product.imagePlaceholder}]
-              </S.CardImage>
+              {}
               <S.CardContent>
                 <S.CardTitle>{product.title}</S.CardTitle>
                 <S.CardDescription>{product.description}</S.CardDescription>
-                <div>
+                
+                <S.TagsWrapper>
                   {product.tags.map((tag, tagIndex) => (
                     <S.CardTag key={tagIndex}>{tag}</S.CardTag>
                   ))}
-                </div>
+                </S.TagsWrapper>
+                
+                <S.ProductLink href={product.link} target="_blank" rel="noopener noreferrer">
+                   Ver Projeto <FaExternalLinkAlt /> {}
+                </S.ProductLink>
               </S.CardContent>
             </S.ProductCard>
           ))}

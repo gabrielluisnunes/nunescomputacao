@@ -9,7 +9,6 @@ import * as S from './styles';
 const navItems = [
   { href: '#home', label: 'Início' },
   { href: '#services', label: 'Serviços' },
-  { href: '#tech', label: 'Tecnologias' },
   { href: '#contact', label: 'Contato' },
 ];
 
@@ -38,7 +37,6 @@ const Header: React.FC = () => {
   return (
     <S.HeaderWrapper isScrolled={isScrolled}>
       <S.Container>
-        {}
         <S.LogoWrapper href="#home"> 
           <Image
             src="/images/logo nunes.png" 
@@ -63,7 +61,7 @@ const Header: React.FC = () => {
           ))}
           <S.CtaButton 
             href="#contact"
-            whileHover={{ scale: 1.05, backgroundColor: '#ff8c00' }}
+            whileHover={{ scale: 1.05, backgroundColor: '#004d99' }}
             whileTap={{ scale: 0.95 }}
             onClick={handleNavLinkClick}
           >

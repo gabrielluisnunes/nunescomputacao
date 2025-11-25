@@ -30,7 +30,7 @@ export const Title = styled.h2`
 
 export const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: ${({ theme }) => theme.spacings.large};
   margin-top: ${({ theme }) => theme.spacings.xlarge};
 

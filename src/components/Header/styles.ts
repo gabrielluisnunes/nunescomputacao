@@ -126,7 +126,7 @@ export const NavLink = styled(motion.a)`
 `;
 
 export const CtaButton = styled(motion.a)`
-  background-color: ${({ theme }) => theme.colors.cta};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: #fff;
   font-size: 1.6rem;
   font-weight: bold;
@@ -138,7 +138,7 @@ export const CtaButton = styled(motion.a)`
   white-space: nowrap;
 
   &:hover {
-    background-color: #ff8c00; 
+    background-color: #004d99; 
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
