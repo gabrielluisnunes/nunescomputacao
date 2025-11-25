@@ -3,6 +3,7 @@
 import React from 'react';
 import * as S from './styles';
 import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 
 const textVariants: Variants = {
   offscreen: {
@@ -42,19 +43,21 @@ const AboutUsSection: React.FC = () => {
       <S.Container>
         <S.ContentGrid>
           
-          {}
           <S.ImageContainer
             variants={imageVariants}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <S.LogoPlaceholder>
-              [Espaço para Logo da Nunes Computação]
-            </S.LogoPlaceholder>
+            <Image
+              src="/images/logo nunes.png" 
+              alt="Nunes Computação Logo"
+              width={300}  
+              height={70} 
+              style={{ objectFit: 'contain' }}
+            />
           </S.ImageContainer>
 
-          {}
           <S.TextContainer
             variants={textVariants}
             initial="offscreen"

@@ -20,7 +20,7 @@ const scroll = keyframes`
 
 export const TechWrapper = styled.section<ThemeProps>`
   padding: ${({ theme }) => theme.spacings.xlarge} 0;
-  background-color: ${({ theme }) => theme.colors.neutral};
+  background-color: #9fdefc2f; 
 `;
 
 export const Container = styled(motion.div)`
@@ -47,7 +47,7 @@ export const Title = styled.h2<ThemeProps>`
 
 export const Subtitle = styled.p<ThemeProps>`
   font-size: 1.8rem;
-  color: #666;
+  color: #555;
   margin-bottom: ${({ theme }) => theme.spacings.xlarge};
   max-width: 800px;
   margin-left: auto;
@@ -85,18 +85,18 @@ export const TechIconItem = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: ${({ theme }) => theme.spacings.medium};
-  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
   transition: all 0.3s ease;
   cursor: default; 
 
   &:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-     min-width: 120px;
+      min-width: 120px;
   }
 `;
 

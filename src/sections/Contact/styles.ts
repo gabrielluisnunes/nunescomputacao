@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaWhatsapp } from 'react-icons/fa';
+
+export const WhatsappIcon = styled(FaWhatsapp)`
+  margin-right: 8px; 
+`;
 
 export const ContactWrapper = styled.section`
   padding: ${({ theme }) => theme.spacings.xlarge} 0;
@@ -153,4 +158,25 @@ export const SubmitButton = styled(motion.button)`
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
   }
+`;
+
+interface StatusMessageProps {
+    status: 'success' | 'error' | 'loading';
+}
+
+export const StatusMessage = styled.p<StatusMessageProps>`
+  margin-bottom: ${({ theme }) => theme.spacings.small};
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  
+  /* Cores baseadas no status */
+  background-color: ${({ status }) => 
+    status === 'success' ? '#e6ffe6' : status === 'error' ? '#ffe6e6' : '#fff5e6'};
+  color: ${({ status }) => 
+    status === 'success' ? '#006600' : status === 'error' ? '#cc0000' : '#ffa500'};
+  border: 1px solid ${({ status }) => 
+    status === 'success' ? '#a3e6a3' : status === 'error' ? '#ff8080' : '#ffbf80'};
 `;

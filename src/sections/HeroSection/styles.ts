@@ -7,12 +7,15 @@ export const HeroWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.background}; 
-  padding: ${({ theme }) => theme.spacings.xlarge} 0;
+  
+  padding-top: 120px; 
+  padding-bottom: ${({ theme }) => theme.spacings.xlarge};
   overflow: hidden; 
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     min-height: auto;
-    padding: ${({ theme }) => theme.spacings.xlarge} 0;
+    padding-top: 100px; 
+    padding-bottom: ${({ theme }) => theme.spacings.xlarge};
   }
 `;
 
@@ -54,7 +57,7 @@ export const Headline = styled(motion.h1)`
 export const Subheadline = styled(motion.p)`
   font-size: 2.0rem;
   line-height: 1.5;
-  color: #666;
+  color: ${({ theme }) => theme.colors.lightGray || '#B0BACC'};
   margin-bottom: ${({ theme }) => theme.spacings.large};
   max-width: 700px;
   margin-left: auto;
@@ -62,25 +65,5 @@ export const Subheadline = styled(motion.p)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1.8rem;
-  }
-`;
-
-export const CtaButton = styled(motion.a)`
-  display: inline-block;
-  background-color: ${({ theme }) => theme.colors.cta};
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: bold;
-  padding: 1.5rem 3.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
-  margin-top: ${({ theme }) => theme.spacings.small};
-
-  &:hover {
-    background-color: #ff8c00; 
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.5);
   }
 `;

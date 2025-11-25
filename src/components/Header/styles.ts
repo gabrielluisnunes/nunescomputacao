@@ -47,15 +47,29 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled.a`
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+export const LogoWrapper = styled.a`
+  display: flex;
+  align-items: center;
   text-decoration: none;
   z-index: 1001;
+  cursor: pointer;
 
-  span {
-    color: ${({ theme }) => theme.colors.primary};
+  img {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    img {
+      height: 35px; 
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    img {
+      height: 30px; 
+    }
   }
 `;
 

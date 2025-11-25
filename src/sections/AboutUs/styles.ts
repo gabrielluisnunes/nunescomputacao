@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const AboutUsWrapper = styled.section`
   padding: ${({ theme }) => theme.spacings.xlarge} 0;
-  background-color: ${({ theme }) => theme.colors.background}; 
+  background-color: #FFFFFF; 
 `;
 
 export const Container = styled.div`
@@ -28,29 +28,29 @@ export const ImageContainer = styled(motion.div)`
   width: 100%;
   height: auto;
   min-height: 250px;
-  background-color: ${({ theme }) => theme.colors.neutral};
+  background-color: #fcf9f9ce; 
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  img {
+    max-width: 80%; 
+    height: auto;
+    padding: ${({ theme }) => theme.spacings.small};
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    order: 1; /* Logo/Imagem primeiro no mobile */
+    order: 1; 
     min-height: 200px;
   }
 `;
 
-export const LogoPlaceholder = styled.div`
-  font-size: 2.0rem;
-  color: #555;
-  padding: 20px;
-  text-align: center;
-`;
-
 export const TextContainer = styled(motion.div)`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    order: 2; /* Texto depois no mobile */
+    order: 2; 
     text-align: center;
   }
 `;
@@ -74,6 +74,6 @@ export const Title = styled.h2`
 export const Paragraph = styled.p`
   font-size: 1.8rem;
   line-height: 1.7;
-  color: #555;
+  color: #555; 
   margin-bottom: ${({ theme }) => theme.spacings.large};
 `;

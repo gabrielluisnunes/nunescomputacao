@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Image from 'next/image'; 
 import * as S from './styles';
 
 const navItems = [
@@ -37,9 +38,16 @@ const Header: React.FC = () => {
   return (
     <S.HeaderWrapper isScrolled={isScrolled}>
       <S.Container>
-        <S.Logo href="#home">
-          Nunes<span> Computação</span>
-        </S.Logo>
+        {}
+        <S.LogoWrapper href="#home"> 
+          <Image
+            src="/images/logo nunes.png" 
+            alt="Logo Nunes Computação"
+            width={180} 
+            height={40} 
+            priority 
+          />
+        </S.LogoWrapper>
         
         <S.Navbar isOpen={isOpen}>
           {navItems.map((item) => (

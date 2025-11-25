@@ -35,7 +35,6 @@ const HeroSection: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          {}
           <S.Headline as={motion.h1} variants={itemVariants}>
             Soluções de Software <span>Sob Medida</span> para seu negócio.
           </S.Headline>
@@ -43,17 +42,7 @@ const HeroSection: React.FC = () => {
           <S.Subheadline as={motion.p} variants={itemVariants}>
             Desenvolvemos módulos, integrações e funcionalidades complementares para automatizar e otimizar processos internos com eficiência garantida.
           </S.Subheadline>
-
-          <S.CtaButton 
-            href="#contact" 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Vamos criar juntos!
-          </S.CtaButton>
           
-          {}
         </S.TextContainer>
       </S.HeroContent>
     </S.HeroWrapper>

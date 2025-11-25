@@ -5,10 +5,9 @@ import * as S from './styles';
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon: string; 
+  icon: React.ElementType; 
   linkHref: string;
 }
-
 
 const cardVariants: Variants = {
   offscreen: {
@@ -26,7 +25,7 @@ const cardVariants: Variants = {
   }
 };
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, linkHref }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, linkHref }) => {
   return (
     <S.ServiceCardContainer 
       variants={cardVariants}
@@ -34,7 +33,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, lin
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.3 }} 
     >
-      <S.IconPlaceholder>{icon}</S.IconPlaceholder>
+      <S.IconPlaceholder>
+        <Icon />
+      </S.IconPlaceholder>
       <S.CardTitle>{title}</S.CardTitle>
       <S.CardDescription>{description}</S.CardDescription>
       <S.CardLink href={linkHref}>Saiba Mais &rarr;</S.CardLink>
