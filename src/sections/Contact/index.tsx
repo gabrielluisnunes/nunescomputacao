@@ -13,7 +13,7 @@ const containerVariants: Variants = {
     y: 0,
     transition: {
       type: "spring",
-      duration: 1.0
+      duration: 1.0,
     }
   }
 };
@@ -85,7 +85,7 @@ ${formData.message}
           <S.FormArea>
             <S.InfoContainer>
               <S.ContactItem>
-                <FaEnvelope /> joninunes@gmail.com
+                <FaEnvelope /> nunescomputacao@gmail.com
               </S.ContactItem>
               <S.ContactItem>
                 <FaPhone /> {displayWhatsappNumber} 

@@ -12,7 +12,7 @@ const productsData = [
     tags: ['SaaS', 'Gestão', 'Web', 'Mobile'],
     link: 'https://www.ossapp.com.br/', 
   },
-  {
+  { 
     title: 'PN Performance Mídia',
     description: 'O projeto consiste na criação da nova Landing Page institucional para a PN Performance, com o objetivo principal de otimizar a captação de leads qualificados através de uma experiência mobile e desktop de alta performance.',
     tags: ['Next.js', 'TyperScript', 'BootsTrap', 'Vercel'],
